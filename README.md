@@ -1,4 +1,4 @@
-# 🚀 notife
+# 🚀 pushr
 
 > A simple, powerful CLI tool for sending notifications across multiple platforms
 
@@ -34,10 +34,10 @@ The easiest way to get started is with `npx` - no installation required!
 
 ```bash
 # First run - automatically creates configuration
-npx notife
+npx pushr
 
 # After configuration, send your first notification
-npx notife -m "Hello from notife! 🎉"
+npx pushr -m "Hello from pushr! 🎉"
 ```
 
 ### Installation
@@ -45,12 +45,12 @@ npx notife -m "Hello from notife! 🎉"
 If you prefer to install globally:
 
 ```bash
-npm install -g notife
+npm install -g pushr
 ```
 
 ## 📋 Configuration
 
-On your first run, notife will automatically create a configuration file at `~/.notife/config.json`. Here's what you need to set up:
+On your first run, pushr will automatically create a configuration file at `~/.pushr/config.json`. Here's what you need to set up:
 
 ### Discord Setup
 
@@ -99,62 +99,76 @@ On your first run, notife will automatically create a configuration file at `~/.
 
 ```bash
 # Send to default platform and channel
-npx notife -m "Deployment completed successfully! ✅"
+npx pushr -m "Deployment completed successfully! ✅"
 
 # Send to specific platform
-npx notife --discord -m "Server is back online"
-npx notife --telegram -m "Build finished"
+npx pushr --discord -m "Server is back online"
+npx pushr --telegram -m "Build finished"
 
 # Send to specific channel
-npx notife --discord --channel alerts -m "Critical error detected!"
+npx pushr --discord --channel alerts -m "Critical error detected!"
 ```
 
 ### Advanced Usage
 
 ```bash
 # Dry run (see what would be sent without actually sending)
-npx notife --dry-run -m "Test message"
+npx pushr --dry-run -m "Test message"
 
 # Send with custom formatting (Discord)
-npx notife --discord -m "**Bold text** and *italic text*"
+npx pushr --discord -m "**Bold text** and *italic text*"
 
 # Send to multiple platforms (coming soon!)
-npx notife --all -m "Important announcement"
+npx pushr --all -m "Important announcement"
+```
+
+### Environment Variables
+You can override the config file location using:
+```bash
+export PUSHR_CONFIG_PATH=/path/to/your/config.json
 ```
 
 ### Command Line Options
 
 ```
+Usage: pushr [options]
+
 Options:
   -m, --message <text>     Message to send (required)
   --discord               Send to Discord
   --telegram              Send to Telegram
   --channel <name>        Target channel name
+  --channelID <id>        Direct channel/chat ID
+  --format <type>         Message format (plain, markdown, embed)
+  --silent                Silent mode (no output)
+  --config <path>         Custom config file path
   --dry-run              Show what would be sent without sending
-  --help                 Show help
-  --version              Show version
+  -h, --help             Show help
+  -v, --version          Show version
 ```
 
 ## 🛠️ Development
 
-Want to contribute or run from source?
-
+### Setup
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/notife.git
-cd notife
+git clone https://github.com/juunnx/pushr.git
+cd pushr
+npm install
+```
 
-# Install dependencies
-bun install
+### Build
+```bash
+npm run build
+```
 
-# Run in development mode
-bun run dev
+### Test locally
+```bash
+# Test the built CLI
+node dist/index.js --help
 
-# Build for production
-bun run build
-
-# Run tests
-bun test
+# Test with npx
+npm pack
+npm install -g pushr-*.tgz
 ```
 
 ## 🤝 Contributing
@@ -179,31 +193,31 @@ Want to add support for Slack, Microsoft Teams, or other platforms? Check out ou
 ```bash
 # GitHub Actions
 - name: Notify deployment
-  run: npx notife --discord --channel deployments -m "🚀 Production deployment completed for ${{ github.sha }}"
+  run: npx pushr --discord --channel deployments -m "🚀 Production deployment completed for ${{ github.sha }}"
 
 # GitLab CI
 script:
-  - npx notife --telegram -m "✅ Pipeline $CI_PIPELINE_ID completed successfully"
+  - npx pushr --telegram -m "✅ Pipeline $CI_PIPELINE_ID completed successfully"
 ```
 
 ### System Monitoring
 
 ```bash
 # Cron job for disk space monitoring
-0 */6 * * * /usr/bin/npx notife -m "💾 Disk usage: $(df -h / | awk 'NR==2{print $5}')"
+0 */6 * * * /usr/bin/npx pushr -m "💾 Disk usage: $(df -h / | awk 'NR==2{print $5}')"
 
 # Docker container health check
-npx notife --discord --channel alerts -m "🐳 Container $CONTAINER_NAME is healthy"
+npx pushr --discord --channel alerts -m "🐳 Container $CONTAINER_NAME is healthy"
 ```
 
 ### Development Workflow
 
 ```bash
 # After successful tests
-npm test && npx notife -m "✅ All tests passed!"
+npm test && npx pushr -m "✅ All tests passed!"
 
 # Database backup completion
-pg_dump mydb > backup.sql && npx notife -m "💾 Database backup completed"
+pg_dump mydb > backup.sql && npx pushr -m "💾 Database backup completed"
 ```
 
 ## 🔒 Security

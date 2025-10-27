@@ -107,11 +107,11 @@ export class ConfigManager {
    */
   private findConfigFile(): string {
     const possiblePaths = [
-      process.env.NOTIFE_CONFIG_PATH,
-      join(homedir(), '.notife', 'config.json'), // User's home directory config (highest priority)
+      process.env.PUSHR_CONFIG_PATH,
+      join(homedir(), '.pushr', 'config.json'), // User's home directory config (highest priority)
       join(process.cwd(), 'config.json'),
-      join(process.cwd(), '.notife.json'),
-      join(homedir(), '.notife.json'),
+      join(process.cwd(), '.pushr.json'),
+      join(homedir(), '.pushr.json'),
     ].filter(Boolean) as string[];
 
     for (const path of possiblePaths) {
@@ -121,7 +121,7 @@ export class ConfigManager {
     }
 
     // Return user's home directory config path as default
-    return join(homedir(), '.notife', 'config.json');
+    return join(homedir(), '.pushr', 'config.json');
   }
 
   /**

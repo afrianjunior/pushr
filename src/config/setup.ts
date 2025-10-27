@@ -6,7 +6,7 @@ import { homedir } from 'os';
  * Configuration setup utilities for first-time initialization
  */
 export class ConfigSetup {
-  private static readonly CONFIG_DIR = join(homedir(), '.notife');
+  private static readonly CONFIG_DIR = join(homedir(), '.pushr');
   private static readonly CONFIG_FILE = join(ConfigSetup.CONFIG_DIR, 'config.json');
   private static readonly EXAMPLE_CONFIG = 'config.json.example';
 
@@ -29,7 +29,7 @@ export class ConfigSetup {
    */
   static initializeConfig(): void {
     try {
-      // Create .notife directory if it doesn't exist
+      // Create .pushr directory if it doesn't exist
       if (!existsSync(ConfigSetup.CONFIG_DIR)) {
         mkdirSync(ConfigSetup.CONFIG_DIR, { recursive: true });
       }
@@ -48,9 +48,9 @@ export class ConfigSetup {
       console.log('📝 Please edit the configuration file to add your platform credentials:');
       console.log(`   ${ConfigSetup.CONFIG_FILE}`);
       console.log('');
-      console.log('💡 After configuring, you can use notife like this:');
-      console.log('   npx notife --discord --channel alerts -m "Hello World!"');
-      console.log('   npx notife --telegram --channel general -m "Deployment complete"');
+      console.log('💡 After configuring, you can use pushr like this:');
+      console.log('   npx pushr --discord --channel alerts -m "Hello World!"');
+      console.log('   npx pushr --telegram --channel general -m "Deployment complete"');
       console.log('');
     } catch (error) {
       throw new Error(`Failed to initialize configuration: ${error}`);
@@ -87,7 +87,7 @@ export class ConfigSetup {
   static showConfigHelp(): void {
     console.log('🔧 Configuration Setup Required');
     console.log('');
-    console.log('It looks like this is your first time using notife!');
+    console.log('It looks like this is your first time using pushr!');
     console.log('A configuration file has been created for you.');
     console.log('');
     console.log('Please follow these steps:');

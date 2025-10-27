@@ -200,11 +200,11 @@ export function configureSendCommand(yargsInstance: Argv): Argv {
       description: 'Preview the message without sending',
       default: false,
     })
-    .example('$0 --discord --channelID 123456789 -m "Hello World!"', 'Send to Discord channel')
-    .example('$0 --discord --channel alerts -m "Server is down!"', 'Send to Discord using alias')
-    .example('$0 --telegram --channelID -987654321 -m "Deployment complete"', 'Send to Telegram channel')
-    .example('$0 --telegram --channel general -m "Build finished"', 'Send to Telegram using alias')
-    .example('$0 --discord --format embed -m "Title|Description|#ff0000"', 'Send Discord embed')
+    .example('pushr --discord --channelID 123456789 -m "Hello World!"', 'Send to Discord channel')
+    .example('pushr --discord --channel alerts -m "Server is down!"', 'Send to Discord using alias')
+    .example('pushr --telegram --channelID -987654321 -m "Deployment complete"', 'Send to Telegram channel')
+    .example('pushr --telegram --channel general -m "Build finished"', 'Send to Telegram using alias')
+    .example('pushr --discord --format embed -m "Title|Description|#ff0000"', 'Send Discord embed')
     .middleware((argv) => {
       // Execute the send command by default
       handleSendCommand(argv as SendCommandArgs);

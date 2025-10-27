@@ -12,7 +12,7 @@ async function main() {
   try {
     // Check if this is a first-time setup
     if (!ConfigSetup.hasConfig()) {
-      console.log('🚀 Welcome to notife!');
+      console.log('🚀 Welcome to pushr!');
       console.log('');
       ConfigSetup.initializeConfig();
       ConfigSetup.showConfigHelp();
@@ -20,7 +20,7 @@ async function main() {
     }
 
     const cli = yargs(hideBin(process.argv))
-      .scriptName('notife')
+      .scriptName('pushr')
       .usage('$0 [options]')
       .version('0.1.0')
       .help()

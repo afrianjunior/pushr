@@ -1,12 +1,12 @@
 {
-  "name": "notife",
-  "version": "0.1.0",
-  "description": "🚀 Send notifications to Discord, Telegram & more from your CLI - Zero config, npx ready",
+  "name": "pushr",
+  "version": "0.0.1",
+  "description": "🚀 Push notifications to Discord, Telegram & more from your CLI - Zero config, npx ready",
   "main": "dist/index.js",
   "module": "src/index.ts",
   "type": "module",
   "bin": {
-    "notife": "./dist/index.js"
+    "pushr": "./dist/index.js"
   },
   "files": [
     "dist",
@@ -22,15 +22,15 @@
     "prepublishOnly": "bun run build"
   },
   "keywords": ["cli", "notifications", "discord", "telegram", "webhook", "npx"],
-  "author": "Your Name",
+  "author": "afrianjunior",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/notife.git"
+    "url": "https://github.com/afrianjunior/pushr.git"
   },
-  "homepage": "https://github.com/yourusername/notife#readme",
+  "homepage": "https://github.com/afrianjunior/pushr#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/notife/issues"
+    "url": "https://github.com/afrianjunior/pushr/issues"
   },
   "devDependencies": {
     "@types/bun": "latest"
