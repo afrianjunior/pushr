@@ -1,0 +1,24 @@
+{
+  "platforms": {
+    "discord": {
+      "bot": {
+        "token": "YOUR_DISCORD_BOT_TOKEN",
+        "channels": {
+          "general": "YOUR_DISCORD_CHANNEL"
+        }
+      }
+    },
+    "telegram": {
+      "bot": {
+        "token": "YOUR_TELEGRAM_BOT_TOKEN",
+        "channels": {
+          "general": "YOUR_TELEGRAM_CHANNEL"
+        }
+      }
+    }
+  },
+  "defaults": {
+    "platform": "discord",
+    "channel": "general"
+  }
+}
