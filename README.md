@@ -2,10 +2,10 @@
 
 > A simple, powerful CLI tool for sending notifications across multiple platforms
 
-[![npm version](https://badge.fury.io/js/notife.svg)](https://badge.fury.io/js/notife)
+[![npm version](https://badge.fury.io/js/pushr.svg)](https://badge.fury.io/js/pushr)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 💡 Why notife?
+## 💡 Why pushr?
 
 In today's fast-paced development world, staying informed about your applications, deployments, and system events is crucial. Whether you're:
 
@@ -14,7 +14,7 @@ In today's fast-paced development world, staying informed about your application
 - 🤖 **Running automated scripts** that need to report their status
 - 🎯 **Building CI/CD pipelines** with notification requirements
 
-**notife** makes it incredibly easy to send notifications to Discord, Telegram, and other platforms with a single, unified command-line interface. No more juggling multiple APIs, webhook URLs, or platform-specific tools!
+**pushr** makes it incredibly easy to send notifications to Discord, Telegram, and other platforms with a single, unified command-line interface. No more juggling multiple APIs, webhook URLs, or platform-specific tools!
 
 ## ✨ Features
 
@@ -243,6 +243,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ for developers who love staying connected**
 
-[Report Bug](https://github.com/yourusername/notife/issues) · [Request Feature](https://github.com/yourusername/notife/issues) · [Documentation](https://github.com/yourusername/notife/wiki)
+[Report Bug](https://github.com/yourusername/pushr/issues) · [Request Feature](https://github.com/yourusername/pushr/issues) · [Documentation](https://github.com/yourusername/pushr/wiki)
 
 </div>

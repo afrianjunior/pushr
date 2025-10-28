@@ -1,6 +1,6 @@
 {
   "name": "pushr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "🚀 Push notifications to Discord, Telegram & more from your CLI - Zero config, npx ready",
   "main": "dist/index.js",
   "module": "src/index.ts",
