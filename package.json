@@ -1,6 +1,6 @@
 {
   "name": "pushr",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "🚀 Push notifications to Discord, Telegram & more from your CLI - Zero config, npx ready",
   "main": "dist/index.js",
   "module": "src/index.ts",
@@ -18,8 +18,7 @@
     "build": "bun build src/index.ts --outdir dist --target node --minify",
     "start": "bun run dist/index.js",
     "test": "bun test",
-    "clean": "rm -rf dist",
-    "prepublishOnly": "bun run build"
+    "clean": "rm -rf dist"
   },
   "keywords": ["cli", "notifications", "discord", "telegram", "webhook", "npx"],
   "author": "afrianjunior",
